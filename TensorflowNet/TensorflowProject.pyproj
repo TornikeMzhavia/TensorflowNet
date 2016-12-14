@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95a22e36-2f21-4cd5-9047-3635418c1a44}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>TFLearn\conv_net.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
+    <Name>TensorflowProject</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MNIST\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MNIST\network.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Recurrent\network.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sentiment\network.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sentiment\Sentiment_data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="basic.py" />
+    <Compile Include="MNIST\MNIST_data.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sentiment\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TFLearn\conv_net.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MNIST\" />
+    <Folder Include="TFLearn\" />
+    <Folder Include="Recurrent\" />
+    <Folder Include="Sentiment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sentiment\neg.txt" />
+    <Content Include="Sentiment\pos.txt" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
